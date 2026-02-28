@@ -1,9 +1,4 @@
-FROM tomcat:9.0-jdk17
-
-# Limpiar apps por defecto
+FROM tomcat:10.1-jdk17
 RUN rm -rf /usr/local/tomcat/webapps/*
-
-# Copiar el WAR generado por Maven
 COPY target/vehiculosBuild.war /usr/local/tomcat/webapps/vehiculos.war
-
 EXPOSE 8080
